@@ -16,8 +16,17 @@
 </head>
 <body>
     <h1>assignment 4_Subsdistricts with most population in SG<br></h1>
+    <div id="label" style="margin-left: 200;">
+        <p>Legend</p>    
+        <p style="color: #eda7a1;"> P≤30000</p>
+        <p style="color: #ed6050;"> P≤60000</p>
+        <p style="color: #e73a27;"> P≤90000</p>
+        <p style="color: #ac1c0c;"> P≤120000</p>
+        <p style="color: #69160d;"> P≤150000</p>  
+    </div>
     
     <svg></svg>    
+
 <script src="https://d3js.org/d3.v7.min.js"></script>
 
 <script>
@@ -34,7 +43,8 @@
                     .domain(numScale)
                     .range(['#eda7a1','#ed6050','#e73a27','#ac1c0c','#69160d']);
                     
-
+        //library(rgdal)
+  
         // Load external data and boot
         Promise.all([d3.json("https://raw.githubusercontent.com/xfiax/HASS-assignment4/main/sgmap.json"), d3.csv("https://raw.githubusercontent.com/xfiax/HASS-assignment4/main/population2021.csv")]).then(data => {
 
